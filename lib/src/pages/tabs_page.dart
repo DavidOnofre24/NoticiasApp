@@ -16,6 +16,7 @@ class _Navegacion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      currentIndex: 0, // Pone rojo el item
       items: [
         BottomNavigationBarItem(
             icon: Icon(Icons.person_outline), label: 'Para ti'),
@@ -29,7 +30,8 @@ class _Paginas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView(
-      physics: BouncingScrollPhysics(),
+      // Se utiliza para como se ve el pageview cuando se termina physics: BouncingScrollPhysics(),
+      physics: NeverScrollableScrollPhysics(),
       children: [
         Container(
           color: Colors.red,
