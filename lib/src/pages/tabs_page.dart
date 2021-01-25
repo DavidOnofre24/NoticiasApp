@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/src/pages/tab1_page.dart';
 import 'package:provider/provider.dart';
 
 class TabsPage extends StatelessWidget {
@@ -42,9 +43,7 @@ class _Paginas extends StatelessWidget {
       // Se utiliza para como se ve el pageview cuando se termina physics: BouncingScrollPhysics(),
       physics: NeverScrollableScrollPhysics(),
       children: [
-        Container(
-          color: Colors.red,
-        ),
+        Tab1Page(),
         Container(
           color: Colors.green,
         )
