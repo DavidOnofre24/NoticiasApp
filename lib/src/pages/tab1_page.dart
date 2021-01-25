@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/src/providers/news_provider.dart';
+import 'package:news_app/src/widgets/lista_noticias.dart';
 import 'package:provider/provider.dart';
 
 class Tab1Page extends StatelessWidget {
@@ -7,9 +8,8 @@ class Tab1Page extends StatelessWidget {
   Widget build(BuildContext context) {
     final newsProvider = Provider.of<NewsProvider>(context);
     return Scaffold(
-      body: Center(
-        child: Text('Hola'),
-      ),
-    );
+        body: ListaNoticias(
+      noticias: newsProvider.encabezados,
+    ));
   }
 }
