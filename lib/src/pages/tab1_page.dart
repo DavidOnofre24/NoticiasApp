@@ -7,6 +7,11 @@ class Tab1Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final newsProvider = Provider.of<NewsProvider>(context);
-    return Scaffold(body: ListaNoticias(newsProvider.encabezados));
+    return Scaffold(
+        body: (newsProvider.encabezados.length == 0)
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+            : ListaNoticias(newsProvider.encabezados));
   }
 }
