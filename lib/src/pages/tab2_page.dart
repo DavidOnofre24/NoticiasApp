@@ -4,8 +4,15 @@ import 'package:news_app/src/providers/news_provider.dart';
 import 'package:news_app/src/widgets/lista_noticias.dart';
 import 'package:provider/provider.dart';
 
-class Tab2Page extends StatelessWidget {
+class Tab2Page extends StatefulWidget {
   @override
+  _Tab2PageState createState() => _Tab2PageState();
+}
+
+class _Tab2PageState extends State<Tab2Page>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  // ignore: must_call_super
   Widget build(BuildContext context) {
     final newsProvider = Provider.of<NewsProvider>(context);
     return SafeArea(
@@ -21,6 +28,10 @@ class Tab2Page extends StatelessWidget {
       )),
     );
   }
+
+  @override
+  // TODO: implement wantKeepAlive
+  bool get wantKeepAlive => true;
 }
 
 class _ListaCategorias extends StatelessWidget {
