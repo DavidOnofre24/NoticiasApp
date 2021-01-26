@@ -31,6 +31,7 @@ class NewsProvider with ChangeNotifier {
       this.categotyArticles[item.name] =
           new List(); //Con esto inicializo cada una de las categorias en el MAP
     });
+    this.getArticlesByCategory(this._categoriaSeleccionada);
   }
 
   List<Article> get getArticulosCategoriaSeleccionada =>
