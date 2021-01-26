@@ -10,7 +10,7 @@ class Tab2Page extends StatelessWidget {
       child: Scaffold(
           body: Column(
         children: [
-          Expanded(child: _ListaCategorias()),
+          _ListaCategorias(),
         ],
       )),
     );
@@ -21,24 +21,28 @@ class _ListaCategorias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final categorias = Provider.of<NewsProvider>(context).categorias;
-    return ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: categorias.length,
-        itemBuilder: (BuildContext context, int index) {
-          final cName = categorias[index].name;
-          return Padding(
-            padding: EdgeInsets.all(8),
-            child: Column(
-              children: [
-                _CategoryButton(categorias[index]),
-                SizedBox(
-                  height: 5,
-                ),
-                Text('${cName[0].toUpperCase()}${cName.substring(1)}'),
-              ],
-            ),
-          );
-        });
+    return Container(
+      width: double.infinity,
+      height: 80,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: categorias.length,
+          itemBuilder: (BuildContext context, int index) {
+            final cName = categorias[index].name;
+            return Padding(
+              padding: EdgeInsets.all(8),
+              child: Column(
+                children: [
+                  _CategoryButton(categorias[index]),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text('${cName[0].toUpperCase()}${cName.substring(1)}'),
+                ],
+              ),
+            );
+          }),
+    );
   }
 }
 
