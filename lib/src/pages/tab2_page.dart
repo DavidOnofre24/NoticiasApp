@@ -50,7 +50,10 @@ class _CategoryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        final newsProvider = Provider.of<NewsProvider>(context, listen: false);
+        newsProvider.categoriaSeleccionada = categoria.name;
+      },
       child: Container(
         width: 40,
         height: 40,
