@@ -49,6 +49,7 @@ class _CategoryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final newsProvider = Provider.of<NewsProvider>(context);
     return GestureDetector(
       onTap: () {
         final newsProvider = Provider.of<NewsProvider>(context, listen: false);
@@ -61,7 +62,9 @@ class _CategoryButton extends StatelessWidget {
         decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
         child: Icon(
           categoria.icon,
-          color: Colors.black54,
+          color: (newsProvider.categoriaSeleccionada == categoria.name)
+              ? Colors.red
+              : Colors.black54,
         ),
       ),
     );
