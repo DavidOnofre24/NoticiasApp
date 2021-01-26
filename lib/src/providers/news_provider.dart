@@ -33,7 +33,11 @@ class NewsProvider with ChangeNotifier {
     });
   }
 
+  List<Article> get getArticulosCategoriaSeleccionada =>
+      this.categotyArticles[this._categoriaSeleccionada];
+
   get categoriaSeleccionada => this._categoriaSeleccionada;
+
   set categoriaSeleccionada(String valor) {
     this._categoriaSeleccionada = valor;
     this.getArticlesByCategory(valor);

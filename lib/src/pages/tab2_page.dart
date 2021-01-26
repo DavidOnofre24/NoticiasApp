@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/src/models/category_model.dart';
 import 'package:news_app/src/providers/news_provider.dart';
+import 'package:news_app/src/widgets/lista_noticias.dart';
 import 'package:provider/provider.dart';
 
 class Tab2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final newsProvider = Provider.of<NewsProvider>(context);
     return SafeArea(
       child: Scaffold(
           body: Column(
         children: [
           _ListaCategorias(),
+          Expanded(
+            child:
+                ListaNoticias(newsProvider.getArticulosCategoriaSeleccionada),
+          )
         ],
       )),
     );
