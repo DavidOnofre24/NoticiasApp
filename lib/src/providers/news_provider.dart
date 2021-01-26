@@ -13,7 +13,7 @@ class NewsProvider with ChangeNotifier {
     Category(FontAwesomeIcons.addressCard, 'general'),
     Category(FontAwesomeIcons.headSideVirus, 'health'),
     Category(FontAwesomeIcons.vials, 'science'),
-    Category(FontAwesomeIcons.footballBall, 'sports'),
+    Category(FontAwesomeIcons.volleyballBall, 'sports'),
     Category(FontAwesomeIcons.memory, 'technology')
   ];
 
